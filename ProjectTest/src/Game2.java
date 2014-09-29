@@ -1,11 +1,18 @@
+/**
+ * 	author Eric Lin
+ * 	Completed
+ * 		Player vs AI
+ */
+
 public class Game2 {
+	private final int MAX = 4;
 	private int initial;
 	private int total;
 	private int player = 2;
 	private boolean repeat = true;
 	private AI bot;
 	//testing variable
-	private int games = 0;
+	//private int games = 0;
 	
 	public Game2(){
 		System.out.println("Initial stick amount:(10-100)");
@@ -17,18 +24,18 @@ public class Game2 {
 		
 		while(total>0 && repeat==true){
 			if(player==2){
-				System.out.println("Player1: How many do you choose?(1-5)");
 				System.out.println("Remaining:" + total);
+				System.out.println("Player1: How many do you choose?(1-"+ MAX +")");
 				String str1 = Main.console.next();
-				inputError(str1,1,5);
+				inputError(str1,1,MAX);
 				player=1;
 			}
 			else{
 				int tempNum = bot.chooseNum(total);
 				bot.updateTemp(total, tempNum);
+				System.out.println("Remaining:" + total);
 				System.out.println("AI chooses " + tempNum + " sticks");
 				total = total - tempNum;
-				System.out.println("Remaining:" + total);
 				System.out.println(" ");
 				player=2;
 			}
@@ -41,12 +48,13 @@ public class Game2 {
 			else{
 				System.out.println("AI loses");
 			}
-			games++;
-			System.out.println("games: " + games);
+			bot.editTemp();
+			//games++;
+			//System.out.println("games: " + games);
 			player = 2;
 			restart();
 		}
-		bot.printArray();
+		//bot.printArray();
 	}
 	
 	public void numError(String temp, int min, int max){
@@ -55,7 +63,7 @@ public class Game2 {
 			if(num>=min && num<=max){
 				total = num;
 				initial = num;
-				bot = new AI(total,5);
+				bot = new AI(total,MAX);
 				gameStart();
 			}
 			else{

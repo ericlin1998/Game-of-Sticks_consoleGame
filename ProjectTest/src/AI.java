@@ -1,3 +1,9 @@
+/**
+ * 	author Eric Lin
+ * 	Completed
+ * 		AI class
+ */
+
 import java.util.ArrayList;
 
 
@@ -29,10 +35,20 @@ public class AI {
 	}
 	
 	public void updateTemp(int remain, int tempNum){
-		
+		//test
+		ArrayList<Integer> tempList2 = new ArrayList<Integer>(0);
+		tempList2.add(remain-1);
+		tempList2.add(tempNum);
+		tempList.add(tempList2);
 	}
 	
 	public void improve(){
-		
+		for(int x=0; x<tempList.size(); x++){
+			list.get(tempList.get(x).get(0)).add(tempList.get(x).get(1));
+		}
+	}
+	
+	public void editTemp(){
+		tempList.removeAll(tempList);
 	}
 }

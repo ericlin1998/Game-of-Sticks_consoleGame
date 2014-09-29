@@ -1,3 +1,9 @@
+/**
+ * 	author Eric Lin
+ * 	Completed-not
+ * 		Main class
+ */
+
 import java.util.Scanner;
 
 
@@ -45,7 +51,6 @@ public class Main {
 	}
 	
 	public static void game1(){
-		//to be implemented
 		System.out.println("Game1 chosen");
 		Game1 game = new Game1();
 		while(game.getRepeat()){
@@ -54,7 +59,6 @@ public class Main {
 	}
 	
 	public static void game2(){
-		//to be implemented
 		System.out.println("Game2 chosen");
 		Game2 game = new Game2();
 		while(game.getRepeat()){
@@ -64,8 +68,11 @@ public class Main {
 	}
 	
 	public static void game3(){
-		//to be implemented
 		System.out.println("Game3 chosen");
+		Game3 game = new Game3();
+		while(game.getRepeat()){
+			game.gameStart();
+		}
 
 	}
 	
