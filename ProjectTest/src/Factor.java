@@ -1,7 +1,7 @@
 
 public class Factor {
 
-	public static int[] factor(int num){
+	public int[] factor(int num){
 		int temp1 = 1;
 		int temp2 = 1;
 		String str = "";
