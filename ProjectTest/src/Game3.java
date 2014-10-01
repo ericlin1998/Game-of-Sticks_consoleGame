@@ -1,6 +1,6 @@
 /**
  * 	author Eric Lin
- * 	Completed-not
+ * 	Completed
  * 		Player vs trained AI
  */
 

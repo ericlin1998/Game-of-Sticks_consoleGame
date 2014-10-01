@@ -1,6 +1,6 @@
 /**
  * 	author Eric Lin
- * 	Completed-not
+ * 	Completed
  * 		Main class
  */
 
@@ -64,7 +64,6 @@ public class Main {
 		while(game.getRepeat()){
 			game.gameStart();
 		}
-
 	}
 	
 	public static void game3(){
@@ -73,13 +72,15 @@ public class Main {
 		while(game.getRepeat()){
 			game.gameStart();
 		}
-
 	}
 	
 	public static void game4(){
 		//to be implemented
 		System.out.println("Game4 chosen");
-
+		Game4 game = new Game4();
+		while(game.getRepeat()){
+			game.gameStart();
+		}
 	}
 
 	public static void gameNumError(String gameNum, int min, int max){

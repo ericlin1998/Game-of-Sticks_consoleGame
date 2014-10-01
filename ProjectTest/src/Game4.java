@@ -1,3 +1,9 @@
+/**
+ * 	author Eric Lin
+ * 	Completed
+ * 		Game4 class
+ */
+
 
 public class Game4 {
 		private int MAX;
@@ -26,7 +32,7 @@ public class Game4 {
 					player=2;
 				}
 				else{
-					int tempNum = bot.selectNum(total);
+					int tempNum = bot.selectNum();
 					System.out.println("Remaining:" + total);
 					System.out.println("AI chooses " + tempNum + " sticks");
 					total = total - tempNum;
@@ -35,8 +41,8 @@ public class Game4 {
 				}
 			}
 			if(repeat==true){
-				if(player==1){
-					System.out.println("Player" + player + " loses");
+				if(player==2){
+					System.out.println("Player1 loses");
 				}
 				else{
 					System.out.println("AI loses");
@@ -55,9 +61,8 @@ public class Game4 {
 				if(num>=min && num<=max){
 					total = num;
 					initial = num;
-					//resume here
-					MAX = findMAX(initial);
 					bot = new differentAI(total);
+					MAX = bot.findMAX(initial);
 					gameStart();
 				}
 				else{
@@ -79,6 +84,7 @@ public class Game4 {
 				int num = Integer.parseInt(temp);
 				if(num>=min && num<=max){
 					total -= num;
+					bot.updatePlayerInput(num);
 				}
 				else{
 					System.out.println("error: input int not within range of "+ min + " and " + max);
@@ -128,12 +134,6 @@ public class Game4 {
 			else{
 				repeat = false;
 			}
-		}
-		
-		public int findMAX(int initial){
-			int num =0;
-			
-			return num;
 		}
 		
 		public static boolean checkInput(String str){
