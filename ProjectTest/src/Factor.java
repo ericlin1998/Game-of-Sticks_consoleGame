@@ -1,3 +1,8 @@
+/**
+ * 	author Eric Lin
+ * 	Completed
+ * 		Factor class
+ */
 
 public class Factor {
 
